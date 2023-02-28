@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+*{
+  margin:0;
+  padding:0;
+  box-sizing:content-box;
+}
+body
+{
+  font-family: 'Poppins', sans-serif;
+}
+ul
+{
+  list-style:none;
+}
+a
+{
+  text-decoration:none;
+}
+/*---Header---*/
+.header
+{
+  height:100vh;
+  width:100vw;
+ background-image: url('kk.JPG');
+  background-size:cover; 
+}
+/*---Navbar---*/
+.navbar
+{
+  position:absolute;
+  width:100%;
+  padding:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.navbar .logo
+{
+  font-size:2em;
+  font-weight:bold;
+}
+.navbar .nav-links ul
+{
+  display:flex;
+}
+.navbar .nav-links ul li
+{
+  margin:0 25px;
+}
+.navbar .nav-links ul li.active a
+{
+  color:#ed3c57;
+  font-weight:600;
+}
+.navbar a 
+{
+  color:white;
+}
+.navbar .menu-hamburger
+{
+  display:none;
+  color:white;
+  position:absolute;
+  top:50px;
+  right:50px;
+  font-size:35px;
+  cursor:pointer;
+}
+
+@media screen and (max-width:900px)
+{
+  .navbar
+  {
+    padding:0;
+  }
+  .navbar .logo
+  {
+    display:none;
+  }
+  .navbar .menu-hamburger
+  {
+    display:block;
+  }
+  .nav-links
+  {
+    top:0;
+    left:-100%;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(0,0,0,0.5);
+    backdrop-filter:blur(8px);
+    width:100%;
+    height:100vh;
+    transition: left 0.5s ease;
+    
+  }
+  .nav-links.mobile-menu
+  {
+  left:0;
+    
+  }
+
+  .nav-links ul
+  {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .navbar .nav-links ul li
+  {
+  margin:25px 0;
+  font-size:1.2em;
+  }
+  .menu-hamburger
+  {
+    display:block;
+  }
+}
+
+/*for image gallery*/
+
+@import url(  https://fonts.googleapis.com/css?family=Montserrat:500   );
+
+:root {
+	/* Base font size */
+	font-size: 10px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #fafafa;
+}
+
+.container {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 2rem 2rem;
+}
+
+.heading {
+	
+	font-size: 4rem;
+	
+}
+
+.heading span {
+	display: block;
+}
+
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	/* Compensate for excess margin on outer gallery flex items */
+	margin: -1rem -1rem;
+}
+
+.gallery-item {
+	/* Minimum width of 24rem and grow to fit available space */
+	flex: 1 0 24rem;
+	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+	margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+	overflow: hidden;
+}
+
+.gallery-image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 800ms ease-out;
+}
+
+.gallery-image:hover {
+	transform: scale(1.15);
+}
+
+/*
+
+The following rule will only run if your browser supports CSS grid.
+
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+
+*/
+
+@supports (display: grid) {
+	.gallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+		grid-gap: 2rem;
+	}
+
+	.gallery,
+	.gallery-item {
+		margin: 0;
+	}
+}
+
+
+/*this is for footer*/
+
+.footer {
+  height: 300px;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  background:linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-top: 20px
+}
+
+.links li {
+  font-size: 1.5rem;
+  margin-bottom: 10px
+}
+
+.links li a {
+  color: #000;
+}
+
+.logo {
+  width: 30%;
+}
+
+.quickLinks {
+  width: 30%;
+}
+
+.quickContacts {
+  width: 30%;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
+    padding: 0px 20px;
+  }
+
+  .logo,
+  .quickLinks,
+  .quickContacts {
+    width: 100%;
+  }
+}
